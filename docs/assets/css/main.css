@@ -2077,6 +2077,7 @@ input, select, textarea {
 				}
 
 				#nav ul li.active a, #nav ul li.active span {
+					background: #444;
 					background: #fff;
 				}
 
