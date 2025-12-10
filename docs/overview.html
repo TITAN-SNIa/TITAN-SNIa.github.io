@@ -51,21 +51,255 @@
 						<div id="content">
 
 							<!-- Content -->
-								<article>
+							 <section id="titan-overview">
+								<h1>TITAN Overview</h1>
 
-									<h2>Overview</h2>
+								<h2>What is TITAN?</h2>
+								<p>
+									TITAN - the <strong>Type Ia Supernova Trove from ATLAS in the Nearby Universe</strong> - is a new
+									low-redshift Type Ia supernova (SN Ia) sample built for the era of precision cosmology.
+								</p>
+								<p>
+									Using the all-sky <strong>ATLAS</strong> survey, TITAN brings together:
+								</p>
+								<ul>
+									<li>Cosmology-grade, uniformly calibrated SN Ia lightcurves</li>
+									<li>A large, homogeneous nearby sample of <strong>&gt;5000 spectroscopically confirmed SNe Ia at z ≲ 0.1</strong></li>
+									<li>A matched host-galaxy catalogue with redshifts and derived physical properties</li>
+								</ul>
+								<p>
+									TITAN is designed both as a <strong>modern replacement for heterogeneous legacy low-z samples</strong> and as a
+									<strong>laboratory for understanding host-galaxy systematics</strong>, such as the SN Ia “mass step”.
+								</p>
+								<p>
+									The first data release of TITAN will consist of 4 papers detailing the construction of various aspects of the sample. These papers are:
+								</p>
+								<ul>
+								<li><a href="#calibration">Calibration</a></li>
+								<li><a href="#lightcurve-fitting">Lightcurve fitting</a></li>
+								<li><a href="#simulations-bias">Simulations and bias corrections</a></li>
+								<li><a href="#hosts">Host galaxy associations and properties</a></li>
+								</ul>
+								<p>
+								Click the above links to read a short summary of each aspect of TITAN DR1.
+								</p>
 
-									<p>TITAN is a Type Ia supernove (SNe Ia) dataset, observed by the Asteroid Terrestrial-impact Last Alert System (ATLAS) telescopes .</p>
+								<h2>Why do we need a new low-z SN Ia sample?</h2>
+								<p>
+									Recent cosmological analyses that combine SN Ia Hubble diagrams with BAO and other probes are starting to show
+									hints of tension with the standard ΛCDM model and possible signatures of evolving dark energy. The statistical
+									power of these experiments has outgrown the nearby SN Ia data they rely on.
+								</p>
+								<p>
+									Most existing low-z SN Ia samples:
+								</p>
+								<ul>
+									<li>Were assembled from many different surveys with differing selection functions</li>
+									<li>Use older photometric calibrations</li>
+									<li>Have incomplete or inhomogeneous host-galaxy information</li>
+								</ul>
+								<p>
+									As a result, <strong>calibration, selection effects and host-related systematics now limit SN Ia cosmology</strong>,
+									rather than raw statistics. TITAN aims to provide a <strong>single, homogeneous, well-characterised low-z anchor</strong>
+									that is commensurate with the precision of Stage IV dark-energy experiments.
+								</p>
+								<p>
+									Another key motivation for TITAN is the <strong>host-galaxy “mass step”</strong>: an empirical offset in SN Ia Hubble
+									residuals between supernovae in low-mass and high-mass galaxies. This effect is one of the dominant systematics
+									in current SN Ia cosmology, but its physical origin - progenitor age, metallicity, star-formation history,
+									dust, or some combination - remains unclear.
+								</p>
+								<p>
+									TITAN provides:
+								</p>
+								<ul>
+									<li>Robust SN-host associations</li>
+									<li>Spectroscopic host redshifts compiled from public catalogues</li>
+									<li>
+									Multi-band host photometry with SED fitting to estimate
+									<strong>stellar mass, star-formation rate, dust attenuation and structural indicators</strong>
+									</li>
+								</ul>
+								<p>
+									The <strong>size and homogeneity</strong> of the TITAN sample allow us to move beyond a single “mass step”
+									parameter and to explore how SN Ia luminosities vary across a richer space of host properties. TITAN is intended
+									both to <strong>clarify the root cause of the mass step</strong> and to identify
+									<strong>host-dependent corrections based on observables measurable across the full redshift range</strong>, so they
+									can be applied consistently to all cosmological SNe Ia.
+								</p>
 
-									<h3>Light Curves</h3>
-									<p>We will release light curves. Stay tuned!</p>
+								<section id="calibration">
+								<h2>Calibration</h2>
+								<p>
+									<!-- Summary of calibration work and some cool plots -->
+								</p>
+								</section>
 
-							      	<h3>Calibration</h3>
-									<p>Please see Marlin et al. (in prep)</p>
-									
-									<h3>Simulation & Bias correction</h3>
-									<p>We will release the bias-corrected distances for cosmology.</p>
-                                </article>
+								<section id="lightcurve-fitting">
+								<h2>Lightcurve fitting</h2>
+								<p>
+									<!-- Summary of lightcurve fitting and some cool plots -->
+								</p>
+								</section>
+
+								<section id="simulations-bias">
+								<h2>Simulations and bias corrections</h2>
+								<style>
+								.titan-sim-row {
+									display: flex;
+									flex-wrap: wrap;
+									align-items: center;
+									gap: 1.5rem;
+									margin: 2rem 0;
+								}
+								.titan-sim-row .titan-sim-text {
+									flex: 1 1 280px;
+								}
+								.titan-sim-row figure {
+									flex: 1 1 280px;
+									margin: 0;
+								}
+								.titan-sim-row figure img {
+									max-width: 100%;
+									height: auto;
+									display: block;
+								}
+								.titan-sim-row figure figcaption {
+									font-size: 0.9rem;
+									color: #555;
+									margin-top: 0.4rem;
+								}
+
+								/* First row: text left, plot right */
+								.titan-sim-row--text-left .titan-sim-text {
+									order: 1;
+								}
+								.titan-sim-row--text-left figure {
+									order: 2;
+								}
+
+								/* Second row: plot left, text right */
+								.titan-sim-row--text-right .titan-sim-text {
+									order: 2;
+								}
+								.titan-sim-row--text-right figure {
+									order: 1;
+								}
+								</style>
+
+								<!-- Row 1: text left, plot right -->
+								<div class="titan-sim-row titan-sim-row--text-left">
+								<div class="titan-sim-text">
+									<p>
+									To understand what ATLAS would see for a given underlying SN Ia population, we
+									build forward simulations of the survey. Using the real ATLAS cadence, depth and image
+									quality as input to SNANA, we generate synthetic SNe Ia, run them through the
+									same detection and lightcurve fitting pipeline as the data, and then adjust our noise
+									and selection models until the simulated light curves and fitted parameters closely
+									match those of real TITAN SNe.
+									</p>
+								</div>
+
+								<figure>
+									<img src="images/titan_real_vs_sim_lc.pdf"
+										alt="Comparison of an ATLAS SN Ia light curve with a simulated light curve">
+									<figcaption>
+									Example real (left) and simulated (right) ATLAS SN Ia lightcurves, illustrating
+									how the simulations reproduce the cadence, depth and noise properties of the survey.
+									</figcaption>
+								</figure>
+								</div>
+
+								<!-- Row 2: plot left, text right -->
+								<div class="titan-sim-row titan-sim-row--text-right">
+								<figure>
+									<img src="images/titan_parent_populations.pdf"
+										alt="Distributions of the intrinsic populations of SN Ia colour and stretch.">
+									<figcaption>
+									Models of the intrinsic populations of SN Ia colour and stretch, that are modified by noise to produce
+									the observed distributions of the TITAN sample.
+									</figcaption>
+								</figure>
+
+								<div class="titan-sim-text">
+									<p>
+									Once validated, these simulations become the engine for our bias and completeness work.
+									They let us quantify how detection and spectroscopic follow-up shape the observed sample,
+									estimate Malmquist and standardisation biases in the Hubble diagram, and derive the bias corrections 
+									needed to use TITAN as a precision low-z anchor for cosmology.
+									</p>
+								</div>
+								</div>
+								</section>
+
+								<section id="hosts">
+								<h2>Host galaxy associations and properties</h2>
+								<p>
+									<!-- Your host galaxy section text here -->
+								</p>
+								</section>
+
+
+								<h2>Simulations and bias corrections</h2>
+								<p>
+									Alongside the data products, TITAN includes:
+								</p>
+								<ul>
+									<li>
+									An end-to-end <strong>simulation pipeline</strong> tuned to the ATLAS cadence, depth and detection pipeline
+									</li>
+									<li><strong>Selection-function and Malmquist-bias estimates</strong></li>
+									<li>
+									Tools to propagate these effects into cosmological analyses
+									</li>
+								</ul>
+								<p>
+									These ingredients are essential for using TITAN as a <strong>precision low-z anchor</strong> in combination
+									with BAO, CMB, LSST and Roman data.
+								</p>
+
+								<section id="titan-figures">
+								<h2>Suggested Figures for This Page</h2>
+								<p>
+									Below are some suggested figures you might include on the overview page. Replace the
+									<code>src</code> attributes with your actual image paths.
+								</p>
+
+								<!-- 1. Schematic / map of ATLAS + TITAN footprint -->
+								<figure>
+									<img src="images/titan_atlas_footprint.png" alt="Sky map showing ATLAS survey footprint and locations of TITAN SNe Ia">
+									<figcaption>
+									A sky map showing the ATLAS survey footprint and the distribution of TITAN SNe Ia in the nearby Universe.
+									</figcaption>
+								</figure>
+
+								<!-- 2. Hubble diagram or redshift distribution -->
+								<figure>
+									<img src="images/titan_redshift_distribution.png" alt="Histogram of redshift distribution for TITAN Type Ia supernovae">
+									<figcaption>
+									Redshift distribution of the &gt;5000 spectroscopically confirmed TITAN SNe Ia, illustrating the low-z
+									coverage used for cosmological anchoring.
+									</figcaption>
+								</figure>
+
+								<!-- 3. Host mass vs Hubble residual (illustrating mass step) -->
+								<figure>
+									<img src="images/titan_mass_step.png" alt="Plot of Hubble residuals versus host galaxy stellar mass">
+									<figcaption>
+									Example illustration of the host-galaxy mass step: Hubble residuals as a function of host stellar mass
+									for the TITAN sample.
+									</figcaption>
+								</figure>
+
+								<!-- 4. Schematic workflow diagram -->
+								<figure>
+									<img src="images/titan_workflow.png" alt="Schematic workflow from ATLAS observations to TITAN cosmology products">
+									<figcaption>
+									Schematic overview of the TITAN pipeline, from ATLAS observations and transient detection through light-curve
+									fitting, host-galaxy matching, simulations and cosmological data products.
+									</figcaption>
+								</figure>
+								</section>
 
 						</div>
 					</div>
@@ -115,7 +349,7 @@
 							<div class="col-12">
 								<div id="copyright">
 									<ul class="menu">
-										<li>&copy; TITAN collaboration 2025.</li>
+										<li>&copy; TITAN collaboration 2025</li>
 									</ul>
 								</div>
 							</div>
