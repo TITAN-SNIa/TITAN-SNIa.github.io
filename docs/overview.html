@@ -233,9 +233,102 @@
 
 								<section id="hosts">
 								<h2>Host galaxy associations and properties</h2>
-								<p>
-									
-								</p>
+								<style>
+								.titan-host-row {
+									display: flex;
+									flex-wrap: wrap;
+									align-items: center;
+									gap: 1.5rem;
+									margin: 2rem 0;
+								}
+								.titan-host-row .titan-host-text {
+									flex: 1 1 280px;
+								}
+								.titan-host-row figure {
+									flex: 1 1 280px;
+									margin: 0;
+								}
+								.titan-host-row figure img {
+									max-width: 100%;
+									height: auto;
+									display: block;
+								}
+								.titan-host-row figure figcaption {
+									font-size: 0.9rem;
+									color: #555;
+									margin-top: 0.4rem;
+								}
+
+								/* First row: text left, plot right */
+								.titan-host-row--text-left .titan-host-text {
+									order: 1;
+								}
+								.titan-host-row--text-left figure {
+									order: 2;
+								}
+
+								/* Second row: plot left, text right */
+								.titan-host-row--text-right .titan-host-text {
+									order: 2;
+								}
+								.titan-host-row--text-right figure {
+									order: 1;
+								}
+								</style>
+
+								<!-- Row 1: text left, plot right -->
+								<div class="titan-host-row titan-host-row--text-left">
+								<div class="titan-host-text">
+									<p>
+									To characterise the environments of TITAN SNe Ia, we first build a robust catalogue
+									of host galaxies. We combine several complementary host-association methods
+									(including manually vetted ATLAS hosts, DLR-based matching and probabilistic
+									cross-matching codes) to choose the most likely galaxy for each supernova and to
+									compile the best available redshift. We then use the <em>HostPhot</em> pipeline to obtain
+									consistent, aperture-matched photometry from the far-ultraviolet to the mid-infrared,
+									and fit these spectral energy distributions with modern SED-fitting tools to infer
+									global stellar masses, star-formation rates and dust content. This provides a
+									homogeneous set of host properties for the entire TITAN sample.
+									</p>
+								</div>
+
+								<figure>
+									<img src="images/sdss_flux_comparison.pdf"
+										alt="Comparison of HostPhot fluxes with SDSS catalogue fluxes">
+									<figcaption>
+									Comparison of HostPhot fluxes with SDSS DR17 catalogue fluxes for a subset of TITAN
+									hosts. The near one-to-one relation and small scatter demonstrate that the photometry
+									is accurate and suitable for precision SED fitting.
+									</figcaption>
+								</figure>
+								</div>
+
+								<!-- Row 2: plot left, text right -->
+								<div class="titan-host-row titan-host-row--text-right">
+								<figure>
+									<img src="images/redshift_comparison_snid_sage_with_residuals.png"
+										alt="Comparison of redshifts derived from SN and galaxy spectra - each plot shows different match quality to SN spectra">
+									<figcaption>
+									A comparison between host-galaxy spectroscopic redshifts and redshifts derived from SN spectra using <em>SNID-SAGE</em>.
+									Each plot shows matches of a different quality, representative of the SNR of the SN spectrum. Medium- and high-quality SN spectra
+									provide reliable redshifts, potentially enabling the expansion of the Hubble diagram to include SNe Ia without host-galaxy redshifts.
+									</figcaption>
+								</figure>
+
+								<div class="titan-host-text">
+									<p>
+									We assess the quality of the host-galaxy spectroscopic redshifts, and compare them to those derived from
+									SN spectra, finding overall strong agreement. We also test the reliability of our host properties in several ways.
+									We directly compare HostPhot fluxes to external catalogues such as SDSS, finding excellent
+									agreement, repeat SED fitting while selectively removing UV and IR
+									bands to assess how the available wavelength coverage affects the inferred properties, and compare the properties
+									of TITAN host galaxies to those of other SN samples. The work of compiling the host catalogue will be released
+									in a forthcoming paper by Tweddle et al., and an astrophysical and cosmological analysis of TITAN SNe and their relation
+									to their host galaxies will be addressed in future work.
+									</p>
+								</div>
+								</div>
+
 								</section>
 
 						</div>
