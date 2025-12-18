@@ -129,60 +129,71 @@
 								<section id="calibration">
 								<h2>Calibration</h2>
 									<style>
-									  figure.fig-right {
-									    float: right;
-									    width: 40%;
-									    margin: 0 0 1em 1.5em;
+									  .section {
+									    display: flex;
+									    align-items: flex-start; 
+									    margin-bottom: 2em;
+									    gap: 1.5em; 
+									  }
+									
+									  .section .text {
+									    flex: 1; 
+									  }
+									
+									  .section .figure-container {
+									    flex: 1; 
 									    text-align: center;
 									  }
 									
-									  figure.fig-left {
-									    float: left;
-									    width: 40%;
-									    margin: 0 1.5em 1em 0;
-									    text-align: center;
-									  }
-									
-									  figure img {
+									  .figure-container img {
 									    width: 100%;
 									    height: auto;
+									    display: block;
 									  }
 									
-									  figcaption {
+									  .figure-container figcaption {
 									    font-size: 0.9em;
 									    color: #555;
+									    margin-top: 0.5em;
 									  }
 									
-									  .clear {
-									    clear: both;
+									
+									  .section.image-left {
+									    flex-direction: row-reverse;
 									  }
 									</style>
 									
-									<p>
-									  TITAN aquires SNe Ia photometry on the ATLAS (Asteroid Terrestrial Last Alert System) telescope network. ATLAS is comprised
-									  of four telescopes, two in Hawaii, one in South Africa, one in Chile, covering an all sky region, with data spanning a decade. Unlike DECam or Pan-STARRS,
-									  ATLAS uses two broadband filters, cyan and orange. Additionally, the CCD cameras in the four telescopes have been swtiched out multiple
-									  times resulting in 9 total CCDs over the lifetime of the network. The vast scale of the ATLAS network, which enables the large datasample of TITAN,
-									  requires precise calibration and systematics estimation.
 									
-									  <figure class="fig-right">
+									<div class="section">
+									  <div class="text">
+									    <p>
+									      TITAN aquires SNe Ia photometry on the ATLAS (Asteroid Terrestrial Last Alert System) telescope network. ATLAS is comprised
+									      of four telescopes, two in Hawaii, one in South Africa, one in Chile, covering an all sky region, with data spanning a decade. Unlike DECam or Pan-STARRS,
+									      ATLAS uses two broadband filters, cyan and orange. Additionally, the CCD cameras in the four telescopes have been swtiched out multiple
+									      times resulting in 9 total CCDs over the lifetime of the network. The vast scale of the ATLAS network, which enables the large datasample of TITAN,
+									      requires precise calibration and systematics estimation.
+									    </p>
+									  </div>
+									  <figure class="figure-container">
 									    <img src="images/transmission_function.pdf" alt="transmission_function">
 									    <figcaption>
 									      Bandpasses of ATLAS orange and cyan bands overlapped with DES g,r,i bands and a HST CALSPEC standard star.
 									    </figcaption>
 									  </figure>
-									</p>
-									<div class="clear"></div>
+									</div>
 									
-									<p>
-									  For our calibration of ATLAS for use in cosmology we calibrate first at a multi-pixel level, observing deviations within each individual CCD filter combination
-									  (intra-chip).
-									  Second, we cross calibrate each CCD with DES (Dark Energy Survey) year 6 data release, to provide a relative calibration of ATLAS with a well measured survey that 
-									  contains stars across a declination range that contains both northern and southern telescopes and data inside and outside the PS1 region, since PS1 is the primary 
-									  initial calibration instroment of ATLAS through the Refcat2 catalog. For this aspect of calibration we produce inter-chip offsets between the CCDs and provide a correction
-									  for an observed chromatic slope in serveral of the CCDs.
 									
-									  <figure class="fig-left">
+									<div class="section image-left">
+									  <div class="text">
+									    <p>
+									      For our calibration of ATLAS for use in cosmology we calibrate first at a multi-pixel level, observing deviations within each individual CCD filter combination
+									      (intra-chip). Second, we cross calibrate each CCD with DES (Dark Energy Survey) year 6 data release, to provide a relative calibration of ATLAS with a well measured survey that 
+									      contains stars across a declination range that contains both northern and southern telescopes and data inside and outside the PS1 region, since PS1 is the primary 
+									      initial calibration instroment of ATLAS through the Refcat2 catalog. For this aspect of calibration we produce inter-chip offsets between the CCDs and provide a correction
+									      for an observed chromatic slope in serveral of the CCDs.
+									    </p>
+									  </div>
+									  <figure class="figure-container">
 									    <img src="images/Offset_sky_heatmap_withHist.pdf" alt="inter--chip_correction">
 									    <figcaption>
 									      Heatmap across the DES region of zeropoint offsets between ATLAS and DES. Can see a significant shift in the southern portion of the sky, this occurs
@@ -190,23 +201,26 @@
 									      all four ATLAS telescopes in line.
 									    </figcaption>
 									  </figure>
-									</p>
-									<div class="clear"></div>
+									</div>
 									
-									<p>
-									  After our calibration is complete we validate our calibration. We first examine the effect our calibration has on an independent set of tertiary stars that are not found
-									  in the Refcat2 survey. Second, we examine primary HST (Hubble Space Telescope) CALSPEC standard stars that validate our results tied to an absolute flux scale. Finally, we examine
-									  that after calibration, we find no systematic offset between TITAN and other premier low-z SNe Ia surveys.
 									
-									  <figure class="fig-right">
+									<div class="section">
+									  <div class="text">
+									    <p>
+									      After our calibration is complete we validate our calibration. We first examine the effect our calibration has on an independent set of tertiary stars that are not found
+									      in the Refcat2 survey. Second, we examine primary HST (Hubble Space Telescope) CALSPEC standard stars that validate our results tied to an absolute flux scale. Finally, we examine
+									      that after calibration, we find no systematic offset between TITAN and other premier low-z SNe Ia surveys.
+									    </p>
+									  </div>
+									  <figure class="figure-container">
 									    <img src="images/survey_comparisons.pdf" alt="survey_comparison">
 									    <figcaption>
 									      Cross matched distance moduli of SNe Ia between TITAN and other low-z SNe Ia surveys. We find TITAN and DEBASS/ YSE
 									      offsets to be in agreement, while ZTF is within agreement with the offsets found in Newman et al. 2025.
 									    </figcaption>
 									  </figure>
-									</p>
-									<div class="clear"></div>
+									</div>
+
 
 								</section>
 
